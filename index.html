@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物魄奇谭 - 盛唐器物寄魂之旅</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D2B48C',
+                        accent: '#CD5C5C',
+                        dark: '#2C1E1E',
+                        light: '#F5F5DC'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                        serif: ['Noto Serif SC', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .transition-transform {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full bg-dark text-white z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo1.png" alt="物魄奇谭" class="h-12">
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-secondary transition-colors">首页</a>
+                <a href="#features" class="hover:text-secondary transition-colors">游戏特色</a>
+                <a href="#series" class="hover:text-secondary transition-colors">作品系列</a>
+                <a href="#team" class="hover:text-secondary transition-colors">团队介绍</a>
+            </div>
+            <button class="md:hidden" id="menu-toggle">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-dark absolute w-full border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#home" class="hover:text-secondary transition-colors">首页</a>
+                <a href="#features" class="hover:text-secondary transition-colors">游戏特色</a>
+                <a href="#series" class="hover:text-secondary transition-colors">作品系列</a>
+                <a href="#team" class="hover:text-secondary transition-colors">团队介绍</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-dark opacity-70"></div>
+            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=A%20mysterious%20scene%20of%20Tang%20Dynasty%20Chang%20An%20city%20at%20night%20with%20floating%20ancient%20artifacts%20and%20magical%20atmosphere%2C%20UE5%20style%2C%20cinematic%20lighting&image_size=landscape_16_9" alt="物魄奇谭背景" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white text-shadow mb-6">物魄奇谭</h1>
+            <p class="text-xl md:text-2xl text-white text-shadow mb-8 max-w-3xl mx-auto">
+                当竹笛声刺破月影，盛唐的暗夜骤然苏醒。
+                这是一场器物寄魂的诡谲之旅，用UE5的纳米级唐风建模撕裂时空，以器物为钥，揭开盛唐皮下机械般精密运转的文明暗码。
+            </p>
+            <a href="#features" class="inline-block bg-primary hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg transition-all hover:scale-105">
+                探索更多
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+            <a href="#features" class="text-white animate-bounce">
+                <i class="fa fa-angle-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 游戏特色 -->
+    <section id="features" class="py-20" style="background: linear-gradient(rgba(245, 245, 220, 0.9), rgba(245, 245, 220, 0.9)), url('logo1.png'); background-size: 1800px; background-repeat: no-repeat; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-primary">游戏特色</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-scale transition-transform">
+                    <div class="text-primary text-4xl mb-4 text-center">
+                        <i class="fa fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">器物寄魂</h3>
+                    <p class="text-gray-700">
+                        触碰斑驳青铜酒觥，你的躯壳瞬间爬满饕餮纹，化作双目燃青焰的司祭铜人；拾起遗落市井的残破陶俑，肌肤便龟裂为兵马俑甲片，可扛起坊门石柱破解机关。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-scale transition-transform">
+                    <div class="text-primary text-4xl mb-4 text-center">
+                        <i class="fa fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">UE5技术</h3>
+                    <p class="text-gray-700">
+                        采用UE5 Nanite技术呈现唐代建筑复杂斗拱结构，Lumen光照系统凸显夜间灯笼的冷暖光对比，变身特效结合Niagara粒子系统呈现传统祥云、火纹等意象。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-scale transition-transform">
+                    <div class="text-primary text-4xl mb-4 text-center">
+                        <i class="fa fa-map"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">盛唐长安</h3>
+                    <p class="text-gray-700">
+                        宫阙飞檐缀满星斗，曲江水纹倒映琉璃光，朱雀大街如鎏金血脉贯通南北。十二时辰的宵禁鼓声在脑后追赶，你的每一次形态吞噬都在改写这座不夜城。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-scale transition-transform">
+                    <div class="text-primary text-4xl mb-4 text-center">
+                        <i class="fa fa-exchange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">视角切换</h3>
+                    <p class="text-gray-700">
+                        按下T键，在第三第一人称间随心切换，身临其境的盛唐冒险！从第一人称眩晕下坠切换为第三人称探索，木质窗棂的阴影掠过你无面目的身躯。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-scale transition-transform">
+                    <div class="text-primary text-4xl mb-4 text-center">
+                        <i class="fa fa-hand-pointer-o"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">物品交互</h3>
+                    <p class="text-gray-700">
+                        物品交互技术，来一场从城门踢到大殿的交互盛宴！任意穿梭，解锁神秘地点触发稀有剧情，在不同立体画作中，留下独一无二的墨迹。
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 hover-scale transition-transform">
+                    <div class="text-primary text-4xl mb-4 text-center">
+                        <i class="fa fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">水墨晕染</h3>
+                    <p class="text-gray-700">
+                        角色变形过程融入水墨晕染过渡效果，笔墨生魄，化身为人——在朦胧夜色中，探索长安奥秘，感受跨越千年的盛唐之美。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品系列 -->
+    <section id="series" class="py-20" style="background: linear-gradient(rgba(243, 244, 246, 0.9), rgba(243, 244, 246, 0.9)), url('logo1.png'); background-size: 600px; background-repeat: no-repeat; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-primary">作品系列</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 物魄奇谭1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale transition-transform">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Tang%20Dynasty%20Chang%20An%20city%20at%20night%20with%20ink%20style%20characters%2C%20mysterious%20atmosphere%2C%20UE5%20game%20scene&image_size=landscape_4_3" alt="物魄奇谭1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-primary">物魄奇谭1：墨夜长安</h3>
+                        <p class="text-gray-700 mb-4">
+                            笔墨生魄，化身为人——在朦胧夜色中，探索长安奥秘，感受跨越千年的盛唐之美——繁华市井，宏伟宫殿，以及静谧繁杂的江湖世界。
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            一座城市，三重奥秘，化身墨人，在不同立体画作中，留下独一无二的墨迹！虚幻引擎打造，以及完全的手工模型！
+                        </p>
+                        <p class="text-gray-700">
+                            作者：李东盛, 杨旭, 司家慧
+                        </p>
+                    </div>
+                </div>
+                <!-- 物魄奇谭2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale transition-transform">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Future%20Tang%20Dynasty%20game%20concept%2C%20mysterious%20artifacts%2C%20magical%20atmosphere%2C%20work%20in%20progress&image_size=landscape_4_3" alt="物魄奇谭2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-primary">物魄奇谭2</h3>
+                        <p class="text-gray-700 mb-4">
+                            物魄奇谭2还在开发中，敬请期待！
+                        </p>
+                        <p class="text-gray-700">
+                            作者：李东盛, 朱政宇，杨旭, 司家慧
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team" class="py-20" style="background: linear-gradient(rgba(245, 245, 220, 0.9), rgba(245, 245, 220, 0.9)), url('logo1.png'); background-size: 1800px; background-repeat: no-repeat; background-position: center; background-attachment: fixed;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-16 text-primary">团队介绍</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center hover-scale transition-transform">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                    <i class="fa fa-user text-4xl text-gray-400"></i>
+                </div>
+                    <h3 class="text-xl font-bold mb-2">李东盛</h3>
+                    <p class="text-gray-600">核心开发者</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center hover-scale transition-transform">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                    <i class="fa fa-user text-4xl text-gray-400"></i>
+                </div>
+                    <h3 class="text-xl font-bold mb-2">杨旭</h3>
+                    <p class="text-gray-600">开发者</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center hover-scale transition-transform">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                    <i class="fa fa-user text-4xl text-gray-400"></i>
+                </div>
+                    <h3 class="text-xl font-bold mb-2">司家慧</h3>
+                    <p class="text-gray-600">开发者</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center hover-scale transition-transform">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                    <i class="fa fa-user text-4xl text-gray-400"></i>
+                </div>
+                    <h3 class="text-xl font-bold mb-2">朱政宇</h3>
+                    <p class="text-gray-600">开发者</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <img src="logo1.png" alt="物魄奇谭" class="h-12">
+                    <span class="ml-3 text-2xl font-serif font-bold">物魄奇谭</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-white hover:text-secondary transition-colors">
+                        <i class="fa fa-weibo text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors">
+                        <i class="fa fa-wechat text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-secondary transition-colors">
+                        <i class="fa fa-qq text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="mb-4">© 2026 物魄奇谭项目组. 保留所有权利.</p>
+                <p class="text-gray-400 mb-4">用UE5的纳米级唐风建模撕裂时空，以器物为钥，揭开盛唐皮下机械般精密运转的文明暗码。</p>
+                <p class="text-gray-400">
+                    <a href="https://aaronswartz0217.github.io/Else-Web/" class="text-secondary hover:underline" target="_blank">联系我们</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
